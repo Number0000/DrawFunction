@@ -11,15 +11,15 @@ class Particle {
     float randmax = 0;
     
     float r = random(0, TWO_PI);
-    float x = cos(r);
-    float y = sin(r);
+    float x = cos(r) * r;
+    float y = sin(r) * r;
     acc = new PVector(x / 250, y / 250);
     
-    float q = random(0, 1);
+    float q = random(-1, 1);
     r = random(randmin, randmax);
-    x = cos(r) * q;
-    y = sin(r) * q;
-    vel = new PVector(x, y);
+    x = cos(r) * q * q * q;
+    y = sin(r) * q * q * q;
+    vel = new PVector(2*x, 2*y);
     loc = l.get();
     hist = new PVector[1000];
   }
